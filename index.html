@@ -65,7 +65,7 @@ body.menu-open .nav-burger span:nth-child(3){transform:translateY(-6px) rotate(-
 /* HERO */
 .hero{
   min-height:100vh;position:relative;
-  display:flex;flex-direction:column;justify-content:flex-end;
+  display:flex;flex-direction:column;
   padding:0;overflow:hidden;
 }
 .hero-bg{
@@ -75,70 +75,86 @@ body.menu-open .nav-burger span:nth-child(3){transform:translateY(-6px) rotate(-
 .hero-bg::after{
   content:'';position:absolute;inset:0;
   background:linear-gradient(to bottom,
-    rgba(15,15,14,0) 0%,
-    rgba(15,15,14,0) 45%,
-    rgba(15,15,14,0.55) 75%,
-    rgba(15,15,14,0.92) 100%);
+    rgba(15,15,14,0.55) 0%,
+    rgba(15,15,14,0.25) 30%,
+    rgba(15,15,14,0.15) 50%,
+    rgba(15,15,14,0.55) 78%,
+    rgba(15,15,14,0.95) 100%);
 }
-.hero-topbar{
-  position:absolute;top:76px;left:0;right:0;z-index:2;
-  padding:32px 64px;
-  display:flex;justify-content:flex-end;
+.hero-eyebrow-wrap{
+  position:absolute;top:100px;left:0;right:0;z-index:2;
+  padding:0 64px;
+  display:flex;justify-content:center;
 }
 .hero-eyebrow{
-  font-size:11px;letter-spacing:.42em;text-transform:uppercase;
+  font-size:11px;letter-spacing:.5em;text-transform:uppercase;
   color:#F5F3EE;font-weight:500;
-  display:flex;align-items:center;gap:14px;
-  padding:10px 20px;
-  background:rgba(15,15,14,0.65);
+  display:flex;align-items:center;gap:16px;
+  padding:12px 28px;
+  background:rgba(15,15,14,0.7);
   backdrop-filter:blur(10px);
   -webkit-backdrop-filter:blur(10px);
-  border-left:2px solid var(--or-clair);
+  border:1px solid rgba(212,194,154,0.4);
 }
-.hero-content{
+.hero-title-block{
   position:relative;z-index:1;
-  padding:0 64px 72px;
+  padding:180px 64px 40px;
+  text-align:center;
   color:#FBF9F4;
   max-width:1240px;margin:0 auto;width:100%;
 }
-.hero-title-row{
-  display:flex;align-items:baseline;gap:32px;
-  margin-bottom:18px;flex-wrap:wrap;
-}
 .hero h1{
   font-family:'Cormorant Garamond',serif;
-  font-size:clamp(48px,6.5vw,92px);
-  font-weight:400;line-height:1;
-  letter-spacing:-.015em;
+  font-size:clamp(64px,10vw,140px);
+  font-weight:500;line-height:1;
+  letter-spacing:.01em;
   color:#FBF9F4;
-  margin:0;
+  margin:0 0 28px;
+  text-shadow:0 4px 30px rgba(0,0,0,0.5);
 }
+.hero h1 em{color:var(--or-clair);font-style:normal;font-weight:500}
 .hero-baseline{
+  display:inline-flex;flex-wrap:wrap;justify-content:center;
+  gap:0 22px;
   font-family:'Cormorant Garamond',serif;
-  font-size:clamp(19px,2vw,26px);
-  font-weight:400;font-style:italic;
-  color:#D4C29A;letter-spacing:.02em;
-  padding-bottom:12px;
+  font-size:clamp(20px,2.4vw,32px);
+  font-weight:500;font-style:italic;
+  letter-spacing:.03em;
+  padding:16px 32px;
+  background:rgba(15,15,14,0.55);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+  border-top:1px solid rgba(212,194,154,0.35);
+  border-bottom:1px solid rgba(212,194,154,0.35);
 }
-.hero-baseline span{margin:0 10px;opacity:.55}
+.hero-baseline em{color:#F0DFB8;font-style:italic}
+.hero-baseline span{color:var(--or-clair);opacity:.7;font-style:normal}
+.hero-content{
+  margin-top:auto;position:relative;z-index:1;
+  padding:0 64px 64px;
+  color:#FBF9F4;
+  max-width:1240px;margin-left:auto;margin-right:auto;width:100%;
+}
 .hero-bottom{
   display:grid;grid-template-columns:1fr auto;gap:64px;
-  align-items:end;margin-top:16px;
-  padding-top:28px;
+  align-items:end;
+  padding-top:32px;
   border-top:1px solid rgba(212,194,154,0.35);
 }
 .hero-desc{
-  font-size:15px;line-height:1.75;
-  color:rgba(251,249,244,0.88);
-  max-width:600px;font-weight:400;margin:0;
+  font-size:15px;line-height:1.8;
+  color:rgba(251,249,244,0.92);
+  max-width:640px;font-weight:400;margin:0;
 }
 .hero-cta{
   display:inline-flex;align-items:center;gap:14px;
   padding:15px 32px;
   border:1px solid var(--or-clair);
   color:var(--ivoire);
-  font-size:11px;letter-spacing:.24em;text-transform:uppercase;font-weight:400;
+  font-size:11px;letter-spacing:.24em;text-transform:uppercase;font-weight:500;
   transition:all .3s;white-space:nowrap;
+  background:rgba(15,15,14,0.5);
+  backdrop-filter:blur(6px);
 }
 .hero-cta:hover{background:var(--or);border-color:var(--or);gap:20px}
 .hero-cta::after{content:'→'}
@@ -389,16 +405,19 @@ footer{
   .nav-burger{display:flex}
   body.menu-open{overflow:hidden}
 
-  .hero{padding:0;min-height:92vh}
+  .hero{padding:0;min-height:100vh}
   .hero-bg{background-position:60% center}
-  .hero-topbar{padding:24px 20px;top:68px;justify-content:flex-start}
-  .hero-eyebrow{font-size:10px;letter-spacing:.3em;padding:8px 14px}
-  .hero-content{padding:0 20px 44px}
-  .hero-title-row{gap:12px;margin-bottom:14px;flex-direction:column;align-items:flex-start}
-  .hero h1{font-size:clamp(48px,14vw,80px)}
-  .hero-baseline{font-size:17px;padding-bottom:0}
-  .hero-baseline span{margin:0 6px}
-  .hero-bottom{grid-template-columns:1fr;gap:24px;padding-top:20px}
+  .hero-eyebrow-wrap{top:90px;padding:0 20px}
+  .hero-eyebrow{font-size:10px;letter-spacing:.32em;padding:9px 16px;gap:10px}
+  .hero-title-block{padding:170px 20px 30px}
+  .hero h1{font-size:clamp(64px,20vw,110px);margin-bottom:22px}
+  .hero-baseline{
+    font-size:16px;padding:12px 18px;
+    gap:0 10px;
+  }
+  .hero-baseline span{margin:0}
+  .hero-content{padding:0 20px 40px}
+  .hero-bottom{grid-template-columns:1fr;gap:22px;padding-top:24px}
   .hero-desc{font-size:14.5px;line-height:1.75}
   .hero-cta{align-self:flex-start;padding:13px 26px}
 
@@ -451,14 +470,19 @@ footer{
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
-  <div class="hero-topbar">
+
+  <div class="hero-eyebrow-wrap">
     <div class="hero-eyebrow">Opérateur immobilier · Bretagne</div>
   </div>
-  <div class="hero-content">
-    <div class="hero-title-row">
-      <h1>IMM<em style="font-style:normal;color:var(--or-clair)">'</em>OB</h1>
-      <div class="hero-baseline">Acquérir <span>·</span> Concevoir <span>·</span> Rénover <span>·</span> Valoriser</div>
+
+  <div class="hero-title-block">
+    <h1>IMM<em>'</em>OB</h1>
+    <div class="hero-baseline">
+      <em>Acquérir</em><span>·</span><em>Concevoir</em><span>·</span><em>Rénover</em><span>·</span><em>Valoriser</em>
     </div>
+  </div>
+
+  <div class="hero-content">
     <div class="hero-bottom">
       <p class="hero-desc">Nous acquérons, concevons, rénovons et valorisons des biens immobiliers en Bretagne, en maîtrisant chaque étape en interne grâce à notre partenariat opérationnel avec AB RENOV 35.</p>
       <a href="#modele" class="hero-cta">Découvrir</a>
