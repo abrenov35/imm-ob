@@ -72,35 +72,43 @@ body.menu-open .nav-burger span:nth-child(3){transform:translateY(-6px) rotate(-
 .hero-bg{
   position:absolute;inset:0;z-index:0;
   background:
-    linear-gradient(to right, rgba(26,26,24,0.72) 0%, rgba(26,26,24,0.35) 55%, rgba(26,26,24,0.15) 100%),
+    linear-gradient(to right, rgba(15,15,14,0.92) 0%, rgba(15,15,14,0.78) 50%, rgba(15,15,14,0.55) 100%),
     url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=80') center/cover;
+}
+.hero-bg::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(to bottom, transparent 0%, transparent 60%, rgba(15,15,14,0.4) 100%);
 }
 .hero-content{position:relative;z-index:1;max-width:720px;color:var(--ivoire)}
 .hero-eyebrow{
-  font-size:10px;letter-spacing:.4em;text-transform:uppercase;
-  color:var(--or-clair);margin-bottom:36px;font-weight:400;
+  font-size:11px;letter-spacing:.42em;text-transform:uppercase;
+  color:#D4C29A;margin-bottom:36px;font-weight:500;
   display:flex;align-items:center;gap:14px;
 }
-.hero-eyebrow::before{content:'';width:32px;height:1px;background:var(--or-clair)}
+.hero-eyebrow::before{content:'';width:32px;height:1px;background:#D4C29A}
 .hero h1{
   font-family:'Cormorant Garamond',serif;
   font-size:clamp(38px,5vw,72px);
-  font-weight:300;line-height:1.05;
+  font-weight:400;line-height:1.05;
   letter-spacing:-.01em;
   margin-bottom:32px;
+  color:#FBF9F4;
+  text-shadow:0 2px 20px rgba(0,0,0,0.35);
 }
 .hero-baseline{
   font-family:'Cormorant Garamond',serif;
   font-size:clamp(20px,2.2vw,30px);
-  font-weight:300;font-style:italic;
-  color:var(--or-clair);letter-spacing:.02em;
+  font-weight:400;font-style:italic;
+  color:#D4C29A;letter-spacing:.02em;
   margin-bottom:44px;
+  text-shadow:0 2px 16px rgba(0,0,0,0.4);
 }
-.hero-baseline span{margin:0 12px;opacity:.5}
+.hero-baseline span{margin:0 12px;opacity:.55}
 .hero-desc{
-  font-size:15px;line-height:1.9;
-  color:rgba(245,243,238,0.82);
-  max-width:520px;margin-bottom:48px;font-weight:300;
+  font-size:16px;line-height:1.85;
+  color:#F5F3EE;
+  max-width:540px;margin-bottom:48px;font-weight:400;
+  text-shadow:0 1px 12px rgba(0,0,0,0.35);
 }
 .hero-cta{
   display:inline-flex;align-items:center;gap:14px;
