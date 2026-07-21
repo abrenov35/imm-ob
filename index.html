@@ -394,14 +394,13 @@ footer{
     z-index:98;
   }
   body.menu-open .nav-overlay{opacity:1;pointer-events:auto}
-  /* Menu déroulant : fond ivoire 100% opaque, forcé */
+  /* Menu déroulant : caché par défaut, glisse depuis la droite au clic */
   .nav-links{
-    position:fixed !important;
+    position:fixed;
     top:68px;left:0;right:0;bottom:0;
-    background-color:#F5F3EE !important;
-    background-image:none !important;
-    display:flex !important;
-    flex-direction:column;gap:0;
+    background:#F5F3EE;
+    flex-direction:column;
+    gap:0;
     padding:32px 24px;
     transform:translateX(100%);
     transition:transform .35s ease;
@@ -412,19 +411,18 @@ footer{
   body.menu-open .nav-links{transform:translateX(0)}
   .nav-links li{
     border-bottom:1px solid var(--ligne);
-    background:#F5F3EE;
     list-style:none;
   }
   .nav-links a{
     display:block;
     padding:22px 8px;
     font-size:16px;letter-spacing:.18em;text-transform:uppercase;
-    color:#1A1A18 !important;
+    color:#1A1A18;
     font-weight:500;
     background:transparent;
     text-decoration:none;
   }
-  .nav-links a:active,.nav-links a:hover{color:var(--or) !important}
+  .nav-links a:active,.nav-links a:hover{color:var(--or)}
   .nav-burger{display:flex;position:relative;z-index:101}
   body.menu-open{overflow:hidden}
 
